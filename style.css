@@ -1,0 +1,35 @@
+.nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 20px;
+    overflow: hidden;
+    background-color: indigo;
+}
+
+.nav a {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    background-color: blue;
+    color: yellow;
+    text-decoration: none;
+    padding: 10px 20px;
+    display:incline-block;
+    text-align: center;
+    border-radius: 25px;
+}
+
+.nav a:hover {
+    background-color: rgb(1, 1, 188);
+}
+
+h1 {
+    font-family: "Lucida Console";
+    text-align: center;
+}
+
+pre {
+    font-family: "Lucida Console";
+    padding: 10px;
+    margin-right: 5px;
+    margin-left: 10px;
+}
