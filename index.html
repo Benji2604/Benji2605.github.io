@@ -8,9 +8,12 @@
   </head>
   <body>
     <header>
+      <a href="index.html" class="logolink">
+        <img src="img/favicon.png" alt="MyEvidence logo" class="logo">
+        <span class="logo-text"><span class="logo-my">My</span><span class="logo-evidence">Evidence</span></span>
+      </a>
       <nav class="nav">
         <ul>
-          <a class="home-Button" href="index.html">Home</a>
           <a class="whoami-button" href="whoamipagina.html">WhoamI?</a>
           <a class="blog-button" href="blog.html">Blog</a>
           <a class="projecten-button" href="projecten.html">Projecten</a>
@@ -20,18 +23,43 @@
 
     <main>
       <section class = "beginscherm">
-        <h1>
-          Welkom bij MyEvidence mijn portfolio site waar u laat zien wat ik
-          allemaal heb gedaan
-        </h1>
+    <div class="card-begin">    
+        <h2><i class="bi bi-person"></i> Over mij</h2>
+        <p>Mijn naam is Benjamin Mrkalj, student bij de haagse hogeschool. en dit is mijn portfolio website.</p>
+        <ul class="card-list">
+            <li><i class="bi bi-mortarboard-fill"></i>  HBO-ICT basisjaar</li>
+            <li><i class="bi bi-geo-alt-fill"></i> Rotterdam</li>
+            <li><i class="bi bi-star-fill"></i> Leergierig, betrokken, teamspeler</li>
+        </ul>
+    </div>
+
+    <div class="card-projecten">
+        <h2><i class="bi bi-laptop"></i> Mijn projecten</h2>
+        <p>Hier vind je een overzicht van mijn projecten en de dingen waar ik aan werk.</p>
+        <a href="projecten.html" class="card-link">Hotel Simulator <span>Java · Swing ›</span></a>
+        <a href="projecten.html" class="card-link">Portfolio website <span>HTML · CSS ›</span></a>
+        <a href="projecten.html" class="card-link">Overige projecten <span>School & eigen ideeën ›</span></a>
+    </div>
+
+    <div class="card-blog">
+        <h2><i class="bi bi-pencil-fill"></i> Mijn blog</h2>
+        <p>Hier deel ik mijn gedachten, ervaringen en leerpunten. Over school, technologie, voetbal en meer.</p>
+        <a href="blog.html" class="card-link">Lees mijn laatste blogposts →</a>
+    </div>
+
+    <div class="card-whoami">
+        <h2><i class="bi bi-person"></i> Whoami?</h2>
+        <p>Meer weten over mijn achtergrond, interesses en doelen? Klik dan hier.</p>
+        <a href="whoamipagina.html" class="card-link">Meer over mij →</a>
+    </div>
       </section>
     </main>
     <footer>
-
         <a
+          class = "footer-link"
           href="https://outlook.cloud.microsoft/mail/inbox/id/AAQkADkzZmZiNGY4LWNjYjYtNDgzYS1iMDYwLTNhN2I0MjM3MDZkZQAQANmeMzrsHEbrlJvYaGjMoA0%3D?deeplink=mail%2F0%2F%3Fnlp%3D0"
         >
-          klik hier om naar mijn schoolmail te gaan.
+          <i class="bi bi-envelope-at-fill footer-icon"></i>klik hier om naar mijn schoolmail te gaan.
         </a>
     </footer>
   </body>

@@ -1,21 +1,60 @@
 <!doctype html>
 <html>
-  <header>
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png" />
     <title>Projecten</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" type="image/png" href="favicon.png" />
-  </header>
+  </head>
   <body>
-    <nav class="nav">
-      <ul>
-        <a class="home-Button" href="index.html">Home</a>
-        <a class="whoami-button" href="whoamipagina.html">WhoamI?</a>
-        <a class="blog-button" href="blog.html">Blog</a>
-      </ul>
-    </nav>
+    <header>
+      <a href="index.html" class="logolink">
+        <img src="img/favicon.png" alt="MyEvidence logo" class="logo" />
+        <span class="logo-text"><span class="logo-my">My</span><span class="logo-evidence">Evidence</span></span>
+      </a>
+      <nav class="nav">
+        <ul>
+          <li><a class="whoami-button" href="whoamipagina.html">WhoamI?</a></li>
+          <li><a class="blog-button" href="blog.html">Blog</a></li>
+          <li><a class="projecten-button" href="projecten.html">Projecten</a></li>
+        </ul>
+      </nav>
+    </header>
 
-    <h1>
-      Hier een klein beetje wat ik allemaal al heb gedaan binnen mijn opleiding
-    </h1>
+    <main>
+  <h1>Mijn projecten</h1>
+  <section class="project">
+    <h2>Hotel Simulator</h2>
+    <p class="project-tech">Java · Swing</p>
+    <p>Een hotelsimulatie gebouwd rond MVC en SOLID-principes, waarbij ik zelf de architectuur heb opgezet en uitgebreid.</p>
+    <ul>
+      <li>MVC-architectuur met strikte scheiding tussen model, view en controller</li>
+      <li>Destructie-eventsysteem (Godzilla) gebouwd met het Strategy pattern</li>
+      <li>SRP-audits uitgevoerd en renderer-klassen opgesplitst in kleinere, losse verantwoordelijkheden</li>
+      <li>UML-klassendiagram bijgehouden in Visual Paradigm</li>
+    </ul>
+  </section>
+
+  <section class="project">
+    <h2>SmartBin</h2>
+    <p class="project-tech">JavaFX · micro:bit · Groepsproject</p>
+    <p>Een slimme prullenbak die met een micro:bit meet hoe vol hij is, gekoppeld aan een JavaFX-applicatie.</p>
+    <ul>
+      <li>Afstandsmeting tussen top en bodem van de bak via een micro:bit-sensor</li>
+      <li>JavaFX-applicatie die de vulgraad visualiseert</li>
+      <li>Samengewerkt in groepsverband aan hardware- en software-integratie</li>
+    </ul>
+  </section>
+
+  <section class="project">
+    <h2>Portfolio website</h2>
+    <p class="project-tech">HTML · CSS · JavaScript</p>
+    <p>Deze portfoliosite zelf, gebouwd vanaf de basis met semantische HTML en een eigen CSS-opmaak.</p>
+    <ul>
+      <li>Semantische HTML5-structuur (header, nav, main, section, footer)</li>
+      <li>Responsive CSS-layout met flexbox en grid</li>
+      <li>Werkende navigatie tussen alle pagina's</li>
+    </ul>
+  </section>
+</main>
   </body>
 </html>
