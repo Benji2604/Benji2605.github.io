@@ -245,10 +245,12 @@ footer {
 }
 
 .whoami-tekst {
+    font-family: sans-serif;
     text-align: left;
 }
 
 .whoami-tekst p {
+    font-family: sans-serif;
     color: white;
     font-size: 1rem;
     line-height: 1.6;
@@ -279,31 +281,12 @@ footer {
     box-shadow: 0 4px 10px white;
 }
 
-.parent {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-}
-.child {
-  flex: 0 0 80%; /* Leaves a visual cue */
-  scroll-snap-align: start;
-}
-
-/* Tablet: rond 768px */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .nav ul {
-        justify-content: center;
-        width: 100%;
-    }
-}
-
-/* Mobiel: rond 480px */
+/* Mobiel: t/m 480px — alles in 1 kolom */
 @media (max-width: 480px) {
+    .beginscherm {
+        grid-template-columns: 1fr;
+    }
+
     .logo-text {
         font-size: 18px;
     }
@@ -319,5 +302,22 @@ footer {
 
     .beginscherm, .project, .blogpost, .whoami-card {
         padding: 15px;
+    }
+}
+
+/* Tablet: 481px t/m 768px — 2 kolommen */
+@media (min-width: 481px) and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav ul {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .beginscherm {
+        grid-template-columns: 1fr 1fr;
     }
 }
