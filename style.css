@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 header {
     display: flex;
     align-items: center;
@@ -44,6 +48,7 @@ body {
     gap: 15px;
     overflow: hidden;
     text-align: center;
+    flex-wrap: wrap;
 }
 
 .nav a {
@@ -90,7 +95,7 @@ body {
 
 .beginscherm {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     padding: 40px 20px;
     max-width: 1200px;
@@ -250,18 +255,21 @@ footer {
 }
 
 .week-log {
+    font-family: sans-serif;
     color: white;
     padding-left: 20px;
     margin: 10px 0;
 }
 
 .week-log li {
+    font-family: sans-serif;
     color: white;
     font-size: 1rem;
     margin-bottom: 8px;
 }
 
 .blogpost {
+    font-family: sans-serif;
     color: white;
     max-width: 800px;
     margin: 30px;
@@ -269,4 +277,47 @@ footer {
     background-color: #0d2f5c;
     border-radius: 12px;
     box-shadow: 0 4px 10px white;
+}
+
+.parent {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+.child {
+  flex: 0 0 80%; /* Leaves a visual cue */
+  scroll-snap-align: start;
+}
+
+/* Tablet: rond 768px */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav ul {
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+/* Mobiel: rond 480px */
+@media (max-width: 480px) {
+    .logo-text {
+        font-size: 18px;
+    }
+
+    .nav a {
+        font-size: 16px;
+        padding: 8px 14px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .beginscherm, .project, .blogpost, .whoami-card {
+        padding: 15px;
+    }
 }
