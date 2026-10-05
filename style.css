@@ -3,6 +3,8 @@
 }
 
 header {
+    flex-wrap: wrap;
+    gap: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -49,6 +51,7 @@ body {
     overflow: hidden;
     text-align: center;
     flex-wrap: wrap;
+    min-width: 0;
 }
 
 .nav a {
@@ -94,10 +97,12 @@ body {
 }
 
 .beginscherm {
+    overflow-wrap: anywhere;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     padding: 40px 20px;
+    min-width: 0;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -281,25 +286,99 @@ footer {
     box-shadow: 0 4px 10px white;
 }
 
+
+.filter-knoppen {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.filter-knoppen button {
+  font-family: sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #013c6f;
+  color: white;
+  border: 2px solid white;
+  border-radius: 25px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.filter-knoppen button:hover {
+  background-color: rgb(1, 1, 188);
+}
+
+.filter-knoppen button:focus-visible {
+  outline: 3px solid white;
+  outline-offset: 3px;
+}
+
+/* blogpost inhoud verbergen, alleen tonen als open is*/
+.blogpost .blog-inhoud {
+  display: none;
+}
+
+.blogpost.open .blog-inhoud {
+  display: block;
+}
+
+.blogpost h2 {
+  cursor: pointer;
+}
+
+/* Dark mode button styling */
+#dark-mode-knop {
+  background-color: #013c6f;
+  color: white;
+  border: 2px solid white;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+/* dark mode klearen na switch*/
+body.dark-mode {
+  background-color: #2b2b2b;
+  color: white;
+}
+
+body.dark-mode .card-begin,
+body.dark-mode .card-projecten,
+body.dark-mode .card-blog,
+body.dark-mode .card-whoami,
+body.dark-mode .project,
+body.dark-mode .whoami-card,
+body.dark-mode .blogpost {
+  background-color: black;
+}
+
+#dark-mode-knop:hover {
+  background-color: rgb(1, 1, 188);
+}
+
 /* Mobiel: t/m 480px — alles in 1 kolom */
-@media (max-width: 480px) {
+@media (max-width: 767px) {
     .beginscherm {
         grid-template-columns: 1fr;
     }
-
     .logo-text {
         font-size: 18px;
     }
-
     .nav a {
         font-size: 16px;
         padding: 8px 14px;
     }
-
     h1 {
         font-size: 1.5rem;
     }
-
     .beginscherm, .project, .blogpost, .whoami-card {
         padding: 15px;
     }
@@ -311,12 +390,10 @@ footer {
         flex-direction: column;
         align-items: flex-start;
     }
-
     .nav ul {
         justify-content: center;
         width: 100%;
     }
-
     .beginscherm {
         grid-template-columns: 1fr 1fr;
     }
