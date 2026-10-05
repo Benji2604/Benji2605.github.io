@@ -173,7 +173,7 @@ footer {
     justify-content: center;
     align-items: center;
     padding: 30px 20px;
-    background-color: #013c6f;
+    background-color: black;
 }
 
 .footer-link {
@@ -344,7 +344,7 @@ footer {
   cursor: pointer;
 }
 
-/* dark mode klearen na switch*/
+/* dark mode kleuren na switch*/
 body.dark-mode {
   background-color: #2b2b2b;
   color: white;
@@ -356,12 +356,127 @@ body.dark-mode .card-blog,
 body.dark-mode .card-whoami,
 body.dark-mode .project,
 body.dark-mode .whoami-card,
-body.dark-mode .blogpost {
+body.dark-mode .blogpost,
+body.dark-mode .contact-card,
+body.dark-mode .grap-card {
   background-color: black;
 }
 
 #dark-mode-knop:hover {
   background-color: rgb(1, 1, 188);
+}
+
+/* Contactformulier styling */
+#contact-formulier {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#contact-formulier label {
+  color: white;
+  font-weight: bold;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+#contact-formulier input,
+#contact-formulier textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid white;
+  font-family: sans-serif;
+  font-size: 1rem;
+}
+
+.contact-card {
+  max-width: 800px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #0d2f5c;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px white;
+    text-align: left;
+}
+
+.verstuur-button {
+  background-color: #013c6f;
+  color: white;
+  border: 2px solid white;
+  border-radius: 60%;
+  width: 100px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+#bevestiging {
+  color: white;
+  font-size: 0.875rem;
+  margin-top: 5px;
+  min-height: 1.2em;
+}
+
+.foutmelding {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 5px;
+  min-height: 1.2em;
+}
+
+.grap-card {
+  font-family: sans-serif;
+  background-color: #013c6f;
+  border: 1px solid #2196F3;
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  max-width: 800px;
+  margin: 30px auto;
+  box-shadow: 0 4px 10px rgb(252, 250, 250);
+}
+
+.grap-card h2 {
+  color: white;
+  margin-top: 0;
+}
+
+.grap-card p {
+  color: white;
+  font-size: 1rem;
+  min-height: 3em;
+}
+
+.grap-card button {
+  font-family: sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #013c6f;
+  color: white;
+  border: 2px solid white;
+  border-radius: 25px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.grap-card button:hover {
+  background-color: rgb(1, 1, 188);
+}
+
+.grap-link-card {
+  display: inline-block;
+  margin-top: 15px;
+  color: white;
+  text-decoration: underline;
+  font-size: 0.9rem;
+}
+
+.grap-link-card:hover {
+  color: #cbd5e1;
 }
 
 /* Mobiel: t/m 480px — alles in 1 kolom */

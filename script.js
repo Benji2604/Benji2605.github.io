@@ -116,12 +116,126 @@ const koppelDarkMode = () => {
     return;
   }
 
+  const icoon = knop.querySelector("i");
+
+  const zetDarkMode = (aan) => {
+    document.body.classList.toggle("dark-mode", aan);
+    icoon.classList.toggle("bi-moon-fill", !aan);
+    icoon.classList.toggle("bi-sun-fill", aan);
+    localStorage.setItem("dark-mode", aan ? "aan" : "uit");
+  };
+
+  zetDarkMode(localStorage.getItem("dark-mode") === "aan");
+
   knop.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
+    const isNuAan = document.body.classList.contains("dark-mode");
+    zetDarkMode(!isNuAan);
   });
+};
+
+//contactformulier validatie
+const valideerNaam = (waarde) => {
+  return waarde.trim().length >= 2;
+};
+
+const valideerEmail = (waarde) => {
+  return waarde.includes("@") && waarde.length > 2;
+};
+
+const valideerBericht = (waarde) => {
+  return waarde.trim().length >= 10;
+};
+
+const toonVeldFout = (input, foutElement, isGeldig, melding) => {
+  if (isGeldig) {
+    foutElement.textContent = "";
+    input.classList.remove("ongeldig");
+    input.removeAttribute("aria-invalid");
+  } else {
+    foutElement.textContent = melding;
+    input.classList.add("ongeldig");
+    input.setAttribute("aria-invalid", "true");
+  }
+};
+
+// contactformulier submit functie
+const verwerkFormulier = (event) => {
+  event.preventDefault();
+
+  const naamInput = document.getElementById("naam");
+  const emailInput = document.getElementById("email");
+  const berichtInput = document.getElementById("bericht");
+
+  const naamFout = document.getElementById("naam-fout");
+  const emailFout = document.getElementById("email-fout");
+  const berichtFout = document.getElementById("bericht-fout");
+
+  const bevestiging = document.getElementById("bevestiging");
+
+  const naamGeldig = valideerNaam(naamInput.value);
+  const emailGeldig = valideerEmail(emailInput.value);
+  const berichtGeldig = valideerBericht(berichtInput.value);
+
+  toonVeldFout(naamInput, naamFout, naamGeldig, "Vul minimaal 2 karakters in voor je naam.");
+  toonVeldFout(emailInput, emailFout, emailGeldig, "Vul een geldig e-mailadres in, met een @.");
+  toonVeldFout(berichtInput, berichtFout, berichtGeldig, "Je bericht moet minimaal 10 karakters lang zijn.");
+
+  if (naamGeldig && emailGeldig && berichtGeldig) {
+    bevestiging.textContent = "Bedankt, je bericht is verzonden!";
+  } else {
+    bevestiging.textContent = "";
+  }
+};
+
+// koppel contactformulier submit event
+const koppelContactFormulier = () => {
+  const formulier = document.getElementById("contact-formulier");
+  if (!formulier) {
+    return;
+  }
+
+  formulier.addEventListener("submit", verwerkFormulier);
+};
+
+// functie om grap op te halen
+const haalGrapOp = async () => {
+  const tekstElement = document.getElementById("grap-tekst");
+  if (!tekstElement) {
+    return;
+  }
+
+  tekstElement.textContent = "Laden...";
+
+  try {
+    const response = await fetch("https://icanhazdadjoke.com/", {
+      headers: { Accept: "application/json" },
+    });
+
+    if (!response.ok) {
+      throw new Error("Server gaf een foutstatus terug");
+    }
+
+    const data = await response.json();
+    tekstElement.textContent = data.joke;
+  } catch (fout) {
+    tekstElement.textContent = "Kon geen grap ophalen. Probeer het later opnieuw.";
+  }
+};
+
+// koppel grap knop
+const koppelGrapKnop = () => {
+  const knop = document.getElementById("grap-knop");
+  if (!knop) {
+    return;
+  }
+
+  knop.addEventListener("click", haalGrapOp);
+  haalGrapOp();
 };
 
 toonProjecten(projecten);
 koppelFilterKnoppen();
 koppelBlogposts();
 koppelDarkMode();
+koppelContactFormulier();
+koppelGrapKnop();
